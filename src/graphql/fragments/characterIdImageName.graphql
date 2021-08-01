@@ -1,0 +1,5 @@
+fragment CharacterIdImageName on Character {
+	id
+	name
+	image
+}

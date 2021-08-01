@@ -1,0 +1,10 @@
+query characters($page: Int!, $filter: FilterCharacter) {
+  characters(page: $page, filter: $filter) {
+    info {
+			...InfoParts
+    }
+    results {
+			...CharacterIdImageName
+    }
+  }
+}

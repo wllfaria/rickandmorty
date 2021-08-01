@@ -1,0 +1,7 @@
+fragment LocationParts on Location {
+	id
+	name
+	type
+	dimension
+	created
+}

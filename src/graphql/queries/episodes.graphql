@@ -1,0 +1,17 @@
+query episodes($page: Int!, $filter: FilterEpisode) {
+	episodes (page: $page, filter: $filter) {
+		info {
+			...InfoParts
+		}
+		results {
+			id
+			name
+			air_date
+			episode
+			created
+			characters {
+				...CharacterIdImageName
+			}
+		}
+	}
+}
