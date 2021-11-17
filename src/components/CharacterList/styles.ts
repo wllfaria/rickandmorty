@@ -1,9 +1,14 @@
 import { EdgeInsets } from 'react-native-safe-area-context'
 import styled from 'styled-components/native'
+import { FlatList as RNFlatList } from 'react-native'
 
 type InsetsProps = {
 	insets: EdgeInsets
 }
+
+export const FlatList = styled(RNFlatList)`
+	flex: 1;
+`
 
 export const Header = styled.View`
 	padding-bottom: 16px;

@@ -15,11 +15,7 @@ export function EpisodeListItem({ episode, index }: EpisodeProps) {
 	const navigation = useNavigation()
 
 	return (
-		<S.Container
-			onPress={() =>
-				navigation.navigate(RouteNames.EpisodeDetailsScreen, { episode })
-			}
-		>
+		<S.Container onPress={() => navigation.navigate(RouteNames.EpisodeDetailsScreen, { episode })}>
 			<S.Number>{index + 1}.</S.Number>
 			<S.Details>
 				<S.Name>{episode.name}</S.Name>

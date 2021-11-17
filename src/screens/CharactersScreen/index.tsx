@@ -3,11 +3,7 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context'
 import SkeletonContent from 'react-native-skeleton-content'
 import CharacterList from '../../components/CharacterList'
 import { SearchInput } from '../../components/SearchInput'
-import {
-	Character,
-	CharactersQueryVariables,
-	useCharactersQuery
-} from '../../generated/graphql'
+import { Character, CharactersQueryVariables, useCharactersQuery } from '../../generated/graphql'
 
 import * as S from './styles'
 
@@ -48,8 +44,7 @@ export function CharactersScreen() {
 	}, [filter?.name])
 
 	useEffect(() => {
-		const currentCharacters = charactersResult.data?.characters
-			?.results as Character[]
+		const currentCharacters = charactersResult.data?.characters?.results as Character[]
 
 		const totalCharacters = isFirstSearchQuery ? [] : [...characters]
 
@@ -68,9 +63,7 @@ export function CharactersScreen() {
 				flexGrow: 1,
 				flexDirection: charactersResult.fetching ? 'row' : 'column',
 				flexWrap: 'wrap',
-				justifyContent: charactersResult.fetching
-					? 'space-between'
-					: 'flex-start',
+				justifyContent: charactersResult.fetching ? 'space-between' : 'flex-start',
 				paddingRight: charactersResult.fetching ? 16 : 0,
 				paddingLeft: charactersResult.fetching ? 16 : 0,
 				marginTop: charactersResult.fetching ? 32 : 0
@@ -89,16 +82,8 @@ export function CharactersScreen() {
 		>
 			<S.Container insets={insets}>
 				<S.Title>Characters</S.Title>
-				<SearchInput
-					placeholder='Type a character name'
-					value={filter?.name as string}
-					onChangeText={handleSearch}
-				/>
-				<CharacterList
-					characters={characters}
-					handleLoadMore={handleLoadMore}
-					isLoading={charactersResult.fetching}
-				/>
+				<SearchInput placeholder='Type a character name' value={filter?.name as string} onChangeText={handleSearch} />
+				<CharacterList characters={characters} handleLoadMore={handleLoadMore} isLoading={charactersResult.fetching} />
 			</S.Container>
 		</SkeletonContent>
 	)

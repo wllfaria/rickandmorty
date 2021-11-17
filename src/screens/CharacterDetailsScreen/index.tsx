@@ -43,10 +43,7 @@ export function CharacterDetailsScreen() {
 				</S.BackButtonContainer>
 
 				<S.CharacterInformation showsVerticalScrollIndicator={false}>
-					<S.Avatar
-						source={{ uri: characterData?.image as string }}
-						resizeMode='cover'
-					/>
+					<S.Avatar source={{ uri: characterData?.image as string }} resizeMode='cover' />
 
 					<S.DetailsWrapper>
 						<S.Label>NAME</S.Label>
@@ -74,9 +71,7 @@ export function CharacterDetailsScreen() {
 						<S.DetailsGrid>
 							<S.Col>
 								<S.Label>ORIGIN</S.Label>
-								<S.Detail>
-									{shapeLocationName(characterData?.origin?.name as string)}
-								</S.Detail>
+								<S.Detail>{shapeLocationName(characterData?.origin?.name as string)}</S.Detail>
 							</S.Col>
 
 							{characterData?.origin?.dimension && (
@@ -97,9 +92,7 @@ export function CharacterDetailsScreen() {
 						<S.DetailsGrid>
 							<S.Col>
 								<S.Label>LOCATION</S.Label>
-								<S.Detail>
-									{shapeLocationName(characterData?.location?.name as string)}
-								</S.Detail>
+								<S.Detail>{shapeLocationName(characterData?.location?.name as string)}</S.Detail>
 							</S.Col>
 
 							<S.Col>

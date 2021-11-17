@@ -5,23 +5,12 @@ import { Input } from '../Input'
 
 import * as S from './styles'
 
-type SearchInputProps = Pick<
-TextInputProps,
-'placeholder' | 'onChangeText' | 'value'
->
+type SearchInputProps = Pick<TextInputProps, 'placeholder' | 'onChangeText' | 'value'>
 
-export function SearchInput({
-	placeholder,
-	value,
-	onChangeText
-}: SearchInputProps) {
+export function SearchInput({ placeholder, value, onChangeText }: SearchInputProps) {
 	return (
 		<S.Container>
-			<Input
-				placeholder={placeholder}
-				onChangeText={onChangeText}
-				value={value}
-			/>
+			<Input placeholder={placeholder} onChangeText={onChangeText} value={value} />
 			<S.IconContainer>
 				<Feather name='search' size={20} color='#777777' />
 			</S.IconContainer>

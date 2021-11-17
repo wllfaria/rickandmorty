@@ -1,18 +1,18 @@
 query character($id: ID!) {
-  character(id: $id) {
-    id
-    name
-    status
-    species
-    type
-    gender
-    origin {
+	character(id: $id) {
+		id
+		name
+		status
+		species
+		type
+		gender
+		origin {
 			...LocationParts
-    }
-    location {
+		}
+		location {
 			...LocationParts
-    }
-    image
-    created
-  }
+		}
+		image
+		created
+	}
 }

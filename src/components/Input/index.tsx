@@ -6,12 +6,5 @@ import * as S from './styles'
 type InputProps = TextInputProps
 
 export function Input({ placeholder, value, onChangeText }: InputProps) {
-	return (
-		<S.Input
-			placeholder={placeholder}
-			onChangeText={onChangeText}
-			value={value}
-			placeholderTextColor='#aaaaaa'
-		/>
-	)
+	return <S.Input placeholder={placeholder} onChangeText={onChangeText} value={value} placeholderTextColor='#aaaaaa' />
 }

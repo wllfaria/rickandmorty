@@ -1,5 +1,5 @@
 query episodes($page: Int!, $filter: FilterEpisode) {
-	episodes (page: $page, filter: $filter) {
+	episodes(page: $page, filter: $filter) {
 		info {
 			...InfoParts
 		}

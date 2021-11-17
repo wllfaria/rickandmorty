@@ -22,9 +22,7 @@ export function EpisodeDetailsScreen() {
 			<BackButton />
 			<S.Header>
 				<S.Name>{episode.name}</S.Name>
-				<S.Description>
-					{readableSeason(episode.episode as string)}
-				</S.Description>
+				<S.Description>{readableSeason(episode.episode as string)}</S.Description>
 				<S.Description>Went live in {episode.air_date}</S.Description>
 			</S.Header>
 			<CharacterList showTitle characters={episode.characters as Character[]} />

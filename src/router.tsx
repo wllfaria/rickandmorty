@@ -45,14 +45,8 @@ export function Router() {
 		<NavigationContainer>
 			<Stack.Navigator screenOptions={{ headerShown: false }}>
 				<Stack.Screen name={RouteNames.HomeScreen} component={TabRouter} />
-				<Stack.Screen
-					name={RouteNames.EpisodeDetailsScreen}
-					component={EpisodeDetailsScreen}
-				/>
-				<Stack.Screen
-					name={RouteNames.CharacterDetailsScreen}
-					component={CharacterDetailsScreen}
-				/>
+				<Stack.Screen name={RouteNames.EpisodeDetailsScreen} component={EpisodeDetailsScreen} />
+				<Stack.Screen name={RouteNames.CharacterDetailsScreen} component={CharacterDetailsScreen} />
 			</Stack.Navigator>
 		</NavigationContainer>
 	)

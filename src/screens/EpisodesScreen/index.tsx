@@ -34,7 +34,7 @@ export function EpisodesScreen() {
 	if (episodesResult.error) {
 		// Make ErrorBoundary display network error component
 		throw new Error(
-			'Displaying error boundary. On expo this will show an red error screen, but when built, app will display fallback UI screen displaying the error. You can see that screen dismissing this error.'
+			'Displaying error boundary. On expo this may show an red error screen, but when built, app will display fallback UI screen displaying the error. You can see that screen dismissing this error.'
 		)
 	}
 
@@ -59,15 +59,9 @@ export function EpisodesScreen() {
 				<FlatList
 					data={episodes}
 					contentContainerStyle={{ flexGrow: 1 }}
-					renderItem={({ item, index }) => (
-						<EpisodeListItem episode={item} index={index} />
-					)}
+					renderItem={({ item, index }) => <EpisodeListItem episode={item} index={index} />}
 					ListFooterComponent={() => (
-						<S.Footer insets={insets}>
-							{episodesResult.fetching && !isFirstFetch && (
-								<ActivityIndicator animating />
-							)}
-						</S.Footer>
+						<S.Footer insets={insets}>{episodesResult.fetching && !isFirstFetch && <ActivityIndicator animating />}</S.Footer>
 					)}
 					showsVerticalScrollIndicator={false}
 					onEndReached={handleLoadMore}

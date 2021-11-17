@@ -4,10 +4,8 @@ export type Maybe<T> = T | null
 export type Exact<T extends { [key: string]: unknown }> = {
 	[K in keyof T]: T[K]
 }
-export type MakeOptional<T, K extends keyof T> = Omit<T, K> &
-	{ [SubKey in K]?: Maybe<T[SubKey]> }
-export type MakeMaybe<T, K extends keyof T> = Omit<T, K> &
-	{ [SubKey in K]: Maybe<T[SubKey]> }
+export type MakeOptional<T, K extends keyof T> = Omit<T, K> & { [SubKey in K]?: Maybe<T[SubKey]> }
+export type MakeMaybe<T, K extends keyof T> = Omit<T, K> & { [SubKey in K]: Maybe<T[SubKey]> }
 export type Omit<T, K extends keyof T> = Pick<T, Exclude<keyof T, K>>
 /** All built-in and custom scalars, mapped to their actual values */
 export type Scalars = {
@@ -196,20 +194,11 @@ export type QueryEpisodesByIdsArgs = {
 	ids: Array<Scalars['ID']>
 }
 
-export type CharacterIdImageNameFragment = { __typename?: 'Character' } & Pick<
-	Character,
-	'id' | 'name' | 'image'
->
+export type CharacterIdImageNameFragment = { __typename?: 'Character' } & Pick<Character, 'id' | 'name' | 'image'>
 
-export type InfoPartsFragment = { __typename?: 'Info' } & Pick<
-	Info,
-	'count' | 'pages' | 'next' | 'prev'
->
+export type InfoPartsFragment = { __typename?: 'Info' } & Pick<Info, 'count' | 'pages' | 'next' | 'prev'>
 
-export type LocationPartsFragment = { __typename?: 'Location' } & Pick<
-	Location,
-	'id' | 'name' | 'type' | 'dimension' | 'created'
->
+export type LocationPartsFragment = { __typename?: 'Location' } & Pick<Location, 'id' | 'name' | 'type' | 'dimension' | 'created'>
 
 export type CharacterQueryVariables = Exact<{
 	id: Scalars['ID']
@@ -217,17 +206,7 @@ export type CharacterQueryVariables = Exact<{
 
 export type CharacterQuery = { __typename?: 'Query' } & {
 	character?: Maybe<
-		{ __typename?: 'Character' } & Pick<
-			Character,
-			| 'id'
-			| 'name'
-			| 'status'
-			| 'species'
-			| 'type'
-			| 'gender'
-			| 'image'
-			| 'created'
-		> & {
+		{ __typename?: 'Character' } & Pick<Character, 'id' | 'name' | 'status' | 'species' | 'type' | 'gender' | 'image' | 'created'> & {
 				origin?: Maybe<{ __typename?: 'Location' } & LocationPartsFragment>
 				location?: Maybe<{ __typename?: 'Location' } & LocationPartsFragment>
 			}
@@ -243,11 +222,7 @@ export type CharactersQuery = { __typename?: 'Query' } & {
 	characters?: Maybe<
 		{ __typename?: 'Characters' } & {
 			info?: Maybe<{ __typename?: 'Info' } & InfoPartsFragment>
-			results?: Maybe<
-				Array<
-					Maybe<{ __typename?: 'Character' } & CharacterIdImageNameFragment>
-				>
-			>
+			results?: Maybe<Array<Maybe<{ __typename?: 'Character' } & CharacterIdImageNameFragment>>>
 		}
 	>
 }
@@ -264,15 +239,8 @@ export type EpisodesQuery = { __typename?: 'Query' } & {
 			results?: Maybe<
 				Array<
 					Maybe<
-						{ __typename?: 'Episode' } & Pick<
-							Episode,
-							'id' | 'name' | 'air_date' | 'episode' | 'created'
-						> & {
-								characters: Array<
-									Maybe<
-										{ __typename?: 'Character' } & CharacterIdImageNameFragment
-									>
-								>
+						{ __typename?: 'Episode' } & Pick<Episode, 'id' | 'name' | 'air_date' | 'episode' | 'created'> & {
+								characters: Array<Maybe<{ __typename?: 'Character' } & CharacterIdImageNameFragment>>
 							}
 					>
 				>
@@ -327,9 +295,7 @@ export const CharacterDocument = gql`
 	${LocationPartsFragmentDoc}
 `
 
-export function useCharacterQuery(
-	options: Omit<Urql.UseQueryArgs<CharacterQueryVariables>, 'query'> = {}
-) {
+export function useCharacterQuery(options: Omit<Urql.UseQueryArgs<CharacterQueryVariables>, 'query'> = {}) {
 	return Urql.useQuery<CharacterQuery>({ query: CharacterDocument, ...options })
 }
 export const CharactersDocument = gql`
@@ -347,9 +313,7 @@ export const CharactersDocument = gql`
 	${CharacterIdImageNameFragmentDoc}
 `
 
-export function useCharactersQuery(
-	options: Omit<Urql.UseQueryArgs<CharactersQueryVariables>, 'query'> = {}
-) {
+export function useCharactersQuery(options: Omit<Urql.UseQueryArgs<CharactersQueryVariables>, 'query'> = {}) {
 	return Urql.useQuery<CharactersQuery>({
 		query: CharactersDocument,
 		...options
@@ -377,8 +341,6 @@ export const EpisodesDocument = gql`
 	${CharacterIdImageNameFragmentDoc}
 `
 
-export function useEpisodesQuery(
-	options: Omit<Urql.UseQueryArgs<EpisodesQueryVariables>, 'query'> = {}
-) {
+export function useEpisodesQuery(options: Omit<Urql.UseQueryArgs<EpisodesQueryVariables>, 'query'> = {}) {
 	return Urql.useQuery<EpisodesQuery>({ query: EpisodesDocument, ...options })
 }
