@@ -1,27 +1,25 @@
-# Teste para vaga Mobile Developer GoFlux
+# Rick and Morty
 
-> wubba lubba dub dub
+## Table of Contents
+- [Motivation](#motivation)
+- [Technical Stack](#technical-stack)
+- [UI Showcase](#ui-showcase)
 
-Nesse projeto foram usadas as seguintes tecnologias:
+## Motivation
 
+As a fan, this project was created to display simple and useful information about the Rick and Morty show. Including information about seasons, episodes, characters and maybe more.
+
+## Technical Stack
 - [GraphQL (URQL)](https://formidable.com/open-source/urql/)
-- [Typescript](https://www.typescriptlang.org)
-- [Expo](https://expo.dev)
-- [Styled Components](https://styled-components.com)
+- [Typescript](https://www.typescriptlang.org/)
+- [Expo](https://expo.dev/)
+- [Styled Components](https://styled-components.com/)
+- [Rick and Morty API](https://rickandmortyapi.com/)
 
-Dentre os quesitos apresentados pelos ciêntistas. Os seguintes foram adressados:
+## UI Showcase
 
-- [x] - A ferramenta deverá ser feita em React Native utilizando Expo
-- [x] - As seguintes telas deverão ser feitas:
-  - [x] - Lista de episódios
-  - [x] - Detalhes do episódio
-  - [x] - Detalhes de personagem
-- [x] - Api GraphQL
-- [x] - Possibilidade de pesquisar personagens
-- [x] - Implementação de handler de erros
+![Episode Details Screen](./github/assets/episode-details.png "Episode Details Screen")
 
-Para iniciar projeto, basta clonar o repositório e executar o seguinte comando:
+---
 
-```bash
-yarn && yarn start
-```
+<p align="center">Made with 💜 and javascript</p>
